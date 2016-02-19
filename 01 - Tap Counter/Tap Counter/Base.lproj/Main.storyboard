@@ -26,12 +26,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-AZ-tE8">
-                                <rect key="frame" x="122" y="333" width="77" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-AZ-tE8">
+                                <rect key="frame" x="139.5" y="359" width="42" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Tap"/>
                                 <connections>
-                                    <action selector="updateLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uDe-4T-dxr"/>
+                                    <action selector="increaseCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRi-g5-yzb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -44,8 +44,15 @@
                             <constraint firstItem="BJe-S6-27M" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-49" id="pGp-0c-Fr9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Vhq-dJ-89b"/>
+                    <navigationItem key="navigationItem" id="Vhq-dJ-89b">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="6lj-3g-oMW">
+                            <connections>
+                                <action selector="resetCounter:" destination="BYZ-38-t0r" id="vQW-Cu-2cL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="resetButton" destination="6lj-3g-oMW" id="cFs-cf-FcY"/>
                         <outlet property="valueLabel" destination="BJe-S6-27M" id="zOk-3m-OQf"/>
                     </connections>
                 </viewController>
