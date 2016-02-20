@@ -43,11 +43,12 @@ class ForceButton: UIButton {
 
     shadowWithAmount(touch.force)
 
-    var percentage = touch.force / maxForceValue * 100
     // The maxForceValue is an approximation, slighty below the actual max value.
+    var percentage = touch.force / maxForceValue * 100
     if percentage > 100 { percentage = 100 }
+    let formattedPercentage = NSString(format: "%.2f", percentage)
 
-    self.setTitle("\(percentage)%", forState: .Normal)
+    self.setTitle("\(formattedPercentage)%", forState: .Normal)
 
     if touch.force >= maxForceValue {
       AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
@@ -67,5 +68,4 @@ class ForceButton: UIButton {
       height: maxShadowOffset.height - amount * heightFactor)
     layer.shadowRadius = maxShadowRadius - amount
   }
-
 }
