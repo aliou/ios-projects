@@ -1,6 +1,6 @@
 ### Notes
 
-#### Updating a something on value change
+#### Updating something on value change
 
 In our case, we want to update the label when the counter value changes. To do
 this, you can use the `didSet` observer on our counter:
