@@ -13,7 +13,7 @@ class ForceButton: UIButton {
   private let maxForceValue: CGFloat = 6.6
   var shadowColor: UIColor = UIColor.grayColor()
   var shadowOpacity: Float = 0.8
-  var maxShadowOffset: CGSize = CGSize(width: 6.6, height: 6.6)
+  var maxShadowOffset: CGSize = CGSize(width: 10, height: 10)
   var maxShadowRadius: CGFloat = 10.0
 
   override func didMoveToSuperview() {
@@ -43,7 +43,11 @@ class ForceButton: UIButton {
 
     shadowWithAmount(touch.force)
 
-    self.setTitle("\(touch.force)", forState: .Normal)
+    var percentage = touch.force / maxForceValue * 100
+    // The maxForceValue is an approximation, slighty below the actual max value.
+    if percentage > 100 { percentage = 100 }
+
+    self.setTitle("\(percentage)%", forState: .Normal)
 
     if touch.force >= maxForceValue {
       AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
