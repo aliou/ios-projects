@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		51ABC2B11C79D94C00E8C885 /* No Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "No Storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51ABC2B11C79D94C00E8C885 /* Steps Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Steps Today.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51ABC2B41C79D94C00E8C885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51ABC2B61C79D94C00E8C885 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		51ABC2BB1C79D94C00E8C885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		51ABC2B21C79D94C00E8C885 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				51ABC2B11C79D94C00E8C885 /* No Storyboard.app */,
+				51ABC2B11C79D94C00E8C885 /* Steps Today.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,7 +81,7 @@
 			);
 			name = "No Storyboard";
 			productName = "No Storyboard";
-			productReference = 51ABC2B11C79D94C00E8C885 /* No Storyboard.app */;
+			productReference = 51ABC2B11C79D94C00E8C885 /* Steps Today.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -243,7 +243,7 @@
 				INFOPLIST_FILE = "No Storyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.aliou.No-Storyboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Steps Today";
 			};
 			name = Debug;
 		};
@@ -254,7 +254,7 @@
 				INFOPLIST_FILE = "No Storyboard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.aliou.No-Storyboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Steps Today";
 			};
 			name = Release;
 		};
