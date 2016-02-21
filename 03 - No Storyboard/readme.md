@@ -37,14 +37,18 @@ func fetchSteps() {
 
   pedometer.queryPedometerDataFromDate(today, toDate: now) {
     (data: CMPedometerData?, error: NSError?) -> Void in
+    var labelText: String
+    // Implicit unwrapping of the `data` object.
     if let stepsData = data {
-      dispatch_async(dispatch_get_main_queue()) {
-        self.stepsLabel.text = "\(stepsData.numberOfSteps) steps so far today."
-      }
+      labelText = "\(stepsData.numberOfSteps) steps so far today."
     } else {
-      dispatch_async(dispatch_get_main_queue()) {
-        self.stepsLabel.text = "Error retrieving the steps data."
-      }
+      labelText = "Error retrieving the steps data."
+    }
+
+    // Since we update something related to the UI, we need to do it in the
+    // main queue / thread or Xcode throws warnings everywhere.
+    dispatch_async(dispatch_get_main_queue()) {
+      self.stepsLabel.text = labelText
     }
   }
 }
