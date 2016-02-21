@@ -37,6 +37,14 @@ class ViewController: UIViewController {
     return label
   }()
 
+  private lazy var previousDayStepsLabel: UILabel = {
+    let label = UILabel()
+    label.font = label.font.fontWithSize(15)
+    label.translatesAutoresizingMaskIntoConstraints = false
+
+    return label
+  }()
+
   let pedometer = CMPedometer()
 
   override func viewDidLoad() {
@@ -68,6 +76,7 @@ class ViewController: UIViewController {
     }
 
     let today = NSDate().beginningOfDay()
+    let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -1, toDate: today, options: [])!
     let now = NSDate()
 
     pedometer.queryPedometerDataFromDate(today, toDate: now) {
@@ -81,6 +90,24 @@ class ViewController: UIViewController {
           self.setupStepsViews(stepsData.numberOfSteps)
         } else {
           self.messageLabel.text = "Error retrieving the steps data."
+        }
+      }
+    }
+
+    pedometer.queryPedometerDataFromDate(yesterday, toDate: today) {
+       (data: CMPedometerData?, error: NSError?) -> Void in
+
+      dispatch_async(dispatch_get_main_queue()) {
+        if let stepsData = data {
+          self.previousDayStepsLabel.text = "\(stepsData.numberOfSteps) steps walked the yesterday"
+          self.view.addSubview(self.previousDayStepsLabel)
+
+          self.view.addConstraints([
+            NSLayoutConstraint(item: self.previousDayStepsLabel, attribute: .CenterX,
+              relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: self.previousDayStepsLabel, attribute: .CenterY,
+              relatedBy: .Equal, toItem: self.view, attribute: .BottomMargin, multiplier: 1, constant: -15)
+          ])
         }
       }
     }
