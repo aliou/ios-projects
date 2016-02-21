@@ -11,9 +11,26 @@ import CoreMotion
 
 class ViewController: UIViewController {
 
-  private lazy var stepsLabel: UILabel = {
+  private lazy var messageLabel: UILabel = {
     let label = UILabel()
     label.text = "Loading..."
+    label.font = label.font.fontWithSize(20)
+    label.translatesAutoresizingMaskIntoConstraints = false
+
+    return label
+  }()
+
+  private lazy var stepsLabel: UILabel = {
+    let label = UILabel()
+    label.font = label.font.fontWithSize(40)
+    label.translatesAutoresizingMaskIntoConstraints = false
+
+    return label
+  }()
+
+  private lazy var stepsDescriptionLabel: UILabel = {
+    let label = UILabel()
+    label.text = "steps so far today"
     label.font = label.font.fontWithSize(20)
     label.translatesAutoresizingMaskIntoConstraints = false
 
@@ -24,7 +41,7 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.addSubview(stepsLabel)
+    view.addSubview(messageLabel)
     fetchSteps()
     setupConstraints()
   }
@@ -37,16 +54,16 @@ class ViewController: UIViewController {
 
   private func setupConstraints() {
     view.addConstraints([
-      NSLayoutConstraint(item: stepsLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view,
+      NSLayoutConstraint(item: messageLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view,
         attribute: .CenterX, multiplier: 1, constant: 0),
-      NSLayoutConstraint(item: stepsLabel, attribute: .CenterY, relatedBy: .Equal, toItem: view,
+      NSLayoutConstraint(item: messageLabel, attribute: .CenterY, relatedBy: .Equal, toItem: view,
         attribute: .CenterY, multiplier: 1, constant: 0)
       ])
   }
 
   private func fetchSteps() {
     if !CMPedometer.isStepCountingAvailable() {
-      stepsLabel.text = "Steps data is not available."
+      messageLabel.text = "Steps data is not available."
       return
     }
 
@@ -55,19 +72,37 @@ class ViewController: UIViewController {
 
     pedometer.queryPedometerDataFromDate(today, toDate: now) {
       (data: CMPedometerData?, error: NSError?) -> Void in
-      var labelText: String
-      // Implicit unwrapping of the `data` object.
-      if let stepsData = data {
-        labelText = "\(stepsData.numberOfSteps) steps so far today."
-      } else {
-        labelText = "Error retrieving the steps data."
-      }
 
       // Since we update something related to the UI, we need to do it in the
       // main queue / thread or Xcode throws warnings everywhere.
       dispatch_async(dispatch_get_main_queue()) {
-        self.stepsLabel.text = labelText
+        // Implicit unwrapping of the `data` object.
+        if let stepsData = data {
+          self.setupStepsViews(stepsData.numberOfSteps)
+        } else {
+          self.messageLabel.text = "Error retrieving the steps data."
+        }
       }
     }
+  }
+
+  private func setupStepsViews(stepCount: NSNumber) {
+    stepsLabel.text = String(stepCount)
+
+    messageLabel.removeFromSuperview()
+    view.addSubview(stepsLabel)
+    view.addSubview(stepsDescriptionLabel)
+
+    view.addConstraints([
+      NSLayoutConstraint(item: stepsLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view,
+        attribute: .CenterX, multiplier: 1, constant: 0),
+      NSLayoutConstraint(item: stepsLabel, attribute: .CenterY, relatedBy: .Equal, toItem: view,
+        attribute: .CenterY, multiplier: 1, constant: -15),
+
+      NSLayoutConstraint(item: stepsDescriptionLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view,
+        attribute: .CenterX, multiplier: 1, constant: 0),
+      NSLayoutConstraint(item: stepsDescriptionLabel, attribute: .CenterY, relatedBy: .Equal, toItem: view,
+        attribute: .CenterY, multiplier: 1, constant: 20),
+    ])
   }
 }
