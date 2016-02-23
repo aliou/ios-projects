@@ -43,8 +43,8 @@ class ViewController: UIViewController {
     view.addSubview(gradientView!)
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
+  override func prefersStatusBarHidden() -> Bool {
+    return true
   }
 
   func updateColor(sender: UIGestureRecognizer) {
