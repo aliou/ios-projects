@@ -15,14 +15,14 @@ class ViewController: UIViewController {
       UIColor(red: 1, green: 0.72, blue: 0.53, alpha: 1),
       UIColor(red: 0.88, green: 0.38, blue: 0.37, alpha: 1)
     ],[
-      UIColor(red: 0.15, green: 0.31, blue: 0.6, alpha: 1),
-      UIColor(red: 0.11, green: 0.23, blue: 0.45, alpha: 1)
-    ], [
       UIColor(red: 0.33, green: 0.56, blue: 0.79, alpha: 1),
       UIColor(red: 0.26, green: 0.49, blue: 0.8, alpha: 1)
     ], [
       UIColor(red: 0.25, green: 0.26, blue: 0.27, alpha: 1),
       UIColor(red: 0.14, green: 0.15, blue: 0.15, alpha: 1)
+    ], [
+      UIColor(red: 0.21, green: 0.56, blue: 0.73, alpha: 1),
+      UIColor(red: 1, green: 0.27, blue: 0.37, alpha: 1)
     ]
   ]
 
