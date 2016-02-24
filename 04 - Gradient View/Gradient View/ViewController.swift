@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     ], [
       UIColor(red: 0.21, green: 0.56, blue: 0.73, alpha: 1),
       UIColor(red: 1, green: 0.27, blue: 0.37, alpha: 1)
+    ], [
+      UIColor(red: 0.95, green: 0.63, blue: 0.67, alpha: 1),
+      UIColor(red: 0.93, green: 0.53, blue: 0.65, alpha: 1)
     ]
   ]
 
