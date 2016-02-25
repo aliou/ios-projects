@@ -14,6 +14,7 @@
 		51F621721C7E7389007F4A7E /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F621711C7E7389007F4A7E /* NavigationController.swift */; };
 		51F621751C7E7CDA007F4A7E /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F621741C7E7CDA007F4A7E /* ImageCell.swift */; };
 		51F621781C7E7EC7007F4A7E /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F621771C7E7EC7007F4A7E /* Image.swift */; };
+		51F6217B1C7E829B007F4A7E /* ListDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6217A1C7E829B007F4A7E /* ListDisplayable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		51F621711C7E7389007F4A7E /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		51F621741C7E7CDA007F4A7E /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = Views/ImageCell.swift; sourceTree = "<group>"; };
 		51F621771C7E7EC7007F4A7E /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Models/Image.swift; sourceTree = "<group>"; };
+		51F6217A1C7E829B007F4A7E /* ListDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListDisplayable.swift; path = Protocols/ListDisplayable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				51F621681C7E7051007F4A7E /* Info.plist */,
 				51F621651C7E7051007F4A7E /* LaunchScreen.storyboard */,
 				51F621761C7E7E9A007F4A7E /* Models */,
+				51F621791C7E8284007F4A7E /* Protocols */,
 				51F6216E1C7E70F3007F4A7E /* View Controllers */,
 				51F621731C7E7CBF007F4A7E /* Views */,
 			);
@@ -92,6 +95,14 @@
 				51F621771C7E7EC7007F4A7E /* Image.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		51F621791C7E8284007F4A7E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				51F6217A1C7E829B007F4A7E /* ListDisplayable.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 			files = (
 				51F621721C7E7389007F4A7E /* NavigationController.swift in Sources */,
 				51F621751C7E7CDA007F4A7E /* ImageCell.swift in Sources */,
+				51F6217B1C7E829B007F4A7E /* ListDisplayable.swift in Sources */,
 				51F621701C7E72B3007F4A7E /* ImageListViewController.swift in Sources */,
 				51F6215D1C7E7051007F4A7E /* AppDelegate.swift in Sources */,
 				51F621781C7E7EC7007F4A7E /* Image.swift in Sources */,
