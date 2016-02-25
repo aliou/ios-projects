@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct Image {
-  var name: String
+struct Image: ListDisplayable {
+  var label: String
   var url: String
 
-  init(_ name: String, _ url: String) {
-    self.name = name
+  init(_ label: String, _ url: String) {
+    self.label = label
     self.url = url
   }
 }

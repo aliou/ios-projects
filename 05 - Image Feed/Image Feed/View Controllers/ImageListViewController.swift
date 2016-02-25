@@ -8,12 +8,45 @@
 
 import UIKit
 
-class ImageListViewController: UITableViewController {
+class ImageListViewController<Item: ListDisplayable>: UITableViewController {
+
+  var items: [Item] = [] {
+    didSet { tableView.reloadData() }
+  }
+
+  var configureCell: (ImageCell, Item) -> Void = {
+    (cell, image) in cell.textLabel!.text = image.label
+  }
+
+
+////////////////////////////////////////////////////////////////////////////////
+  // MARK: - Init
+
+  init() {
+    super.init(nibName: nil, bundle: nil)
+  }
+
+////////////////////////////////////////////////////////////////////////////////
+  // MARK: - UIViewController
+
   override func viewDidLoad() {
     super.viewDidLoad()
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
+////////////////////////////////////////////////////////////////////////////////
+  // MARK: - UITableViewDataSource
+
+  override func tableView(tableView: UITableView,
+    numberOfRowsInSection section: Int) -> Int {
+      return items.count
   }
+
+  override func tableView(tableView: UITableView,
+    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+      let cell = ImageCell()
+      configureCell(cell, items[indexPath.row])
+
+      return cell
+  }
+////////////////////////////////////////////////////////////////////////////////
 }
