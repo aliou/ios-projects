@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageListViewController<Item: ListDisplayable>: UITableViewController {
+class ImageListViewController<Item: protocol<ListDisplayable, RemoteResourceable>>: UITableViewController {
 
   var items: [Item] = [] {
     didSet { tableView.reloadData() }

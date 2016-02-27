@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51DC6D841C8265A200920C60 /* RemoteResourceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC6D831C8265A200920C60 /* RemoteResourceable.swift */; };
 		51F6215D1C7E7051007F4A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6215C1C7E7051007F4A7E /* AppDelegate.swift */; };
 		51F621641C7E7051007F4A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51F621631C7E7051007F4A7E /* Assets.xcassets */; };
 		51F621671C7E7051007F4A7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F621651C7E7051007F4A7E /* LaunchScreen.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51DC6D831C8265A200920C60 /* RemoteResourceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteResourceable.swift; path = Protocols/RemoteResourceable.swift; sourceTree = "<group>"; };
 		51F621591C7E7051007F4A7E /* Image Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F6215C1C7E7051007F4A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51F621631C7E7051007F4A7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				51F6217A1C7E829B007F4A7E /* ListDisplayable.swift */,
+				51DC6D831C8265A200920C60 /* RemoteResourceable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				51F621721C7E7389007F4A7E /* NavigationController.swift in Sources */,
 				51F621751C7E7CDA007F4A7E /* ImageCell.swift in Sources */,
 				51F6217B1C7E829B007F4A7E /* ListDisplayable.swift in Sources */,
+				51DC6D841C8265A200920C60 /* RemoteResourceable.swift in Sources */,
 				51F621701C7E72B3007F4A7E /* ImageListViewController.swift in Sources */,
 				51F6215D1C7E7051007F4A7E /* AppDelegate.swift in Sources */,
 				51F621781C7E7EC7007F4A7E /* Image.swift in Sources */,

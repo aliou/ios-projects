@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct Image: ListDisplayable {
+struct Image: ListDisplayable, RemoteResourceable {
   var label: String
-  var url: String
+  var resourceURL: NSURL?
 
-  init(_ label: String, _ url: String) {
+  init(label: String, imageURL: String) {
     self.label = label
-    self.url = url
+    self.resourceURL = NSURL(string: imageURL)
   }
 }
