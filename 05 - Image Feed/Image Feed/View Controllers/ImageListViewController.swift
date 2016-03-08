@@ -43,7 +43,8 @@ class ImageListViewController<Item: protocol<ListDisplayable, RemoteResourceable
 
   override func tableView(tableView: UITableView,
     cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-      let cell = ImageCell()
+      let remoteImage = items[indexPath.row] as! Image
+      let cell = ImageCell(remoteImage: remoteImage)
       configureCell(cell, items[indexPath.row])
 
       return cell
