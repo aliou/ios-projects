@@ -21,3 +21,15 @@ class DopeViewController<T where T : FirstProtocol, T : SecondProtocol>{ }
 // OR using protocol composition.
 class DopeViewController<T : protocol<FirstProtocol, SecondProtocol>>{ }
 ```
+
+#### Downloading an image
+
+```swift
+let url = NSURL(string: "https://source.unsplash.com/category/buildings")
+if let resource = url {
+  let imageData = NSData(contentsOfURL: resource)
+    if let imageData = imageData {
+      let image = UIImage(data: imageData)
+    }
+}
+```
