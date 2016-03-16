@@ -14,6 +14,7 @@ class ImageCell: UITableViewCell {
 
   var remoteImage: Image
 
+  @IBOutlet weak var mainImageView: UIImageView!
   // MARK: - Init
 
   required init?(coder aDecoder: NSCoder) {
@@ -23,5 +24,11 @@ class ImageCell: UITableViewCell {
   init(remoteImage: Image) {
     self.remoteImage = remoteImage
     super.init(style: .Default, reuseIdentifier: ImageCellReuseIdentifier)
+
+    self.remoteImage.downloadResource() {
+      if let image = self.remoteImage.image {
+        self.mainImageView.image = image
+      }
+    }
   }
 }

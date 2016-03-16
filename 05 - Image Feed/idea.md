@@ -1,0 +1,6 @@
+- Image feed with Peek and Pop functionalities.
+  -> Actions: Fav, share, remove
+  -> https://dribbble.com/shots/2232768-Travel-app-Place-info
+  -> http://stackoverflow.com/questions/14318336/make-uiimageview-fill-the-whole-uitableviewcell?lq=1
+  -> https://twitter.com/realm/status/661181794906218497
+  -> https://realm.io/news/gwendolyn-weston-ios-background-networking/

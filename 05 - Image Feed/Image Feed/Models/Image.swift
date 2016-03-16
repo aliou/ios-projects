@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Image: ListDisplayable, RemoteResourceable {
+class Image: ListDisplayable, RemoteResourceable {
   var label: String
   var resourceURL: NSURL?
 
@@ -18,10 +18,10 @@ struct Image: ListDisplayable, RemoteResourceable {
     self.label = label
     self.resourceURL = NSURL(string: imageURL)
 
-    downloadResource()
+    downloadResource() { print("Downloaded image \(self.label).")}
   }
 
-  mutating func downloadResource() {
+  func downloadResource(block: () -> Void) {
     let queue = NSOperationQueue()
 
     queue.addOperationWithBlock() {
@@ -31,6 +31,10 @@ struct Image: ListDisplayable, RemoteResourceable {
         let imageData = NSData(contentsOfURL: resource)
         if let imageData = imageData {
           self.image = UIImage(data: imageData)
+
+          NSOperationQueue.mainQueue().addOperationWithBlock() {
+            block()
+          }
         }
       }
     }

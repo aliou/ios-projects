@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		511A7F111C95E9A40053A20A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511A7F101C95E9A40053A20A /* ImageViewController.swift */; };
+		518F33241C90A4DC0062041B /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 518F33231C90A4DC0062041B /* ImageCell.xib */; };
 		51DC6D841C8265A200920C60 /* RemoteResourceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC6D831C8265A200920C60 /* RemoteResourceable.swift */; };
 		51F6215D1C7E7051007F4A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F6215C1C7E7051007F4A7E /* AppDelegate.swift */; };
 		51F621641C7E7051007F4A7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51F621631C7E7051007F4A7E /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		511A7F101C95E9A40053A20A /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		518F33231C90A4DC0062041B /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageCell.xib; path = Views/ImageCell.xib; sourceTree = "<group>"; };
 		51DC6D831C8265A200920C60 /* RemoteResourceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteResourceable.swift; path = Protocols/RemoteResourceable.swift; sourceTree = "<group>"; };
 		51F621591C7E7051007F4A7E /* Image Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Feed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F6215C1C7E7051007F4A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				51F6216F1C7E72B3007F4A7E /* ImageListViewController.swift */,
 				51F621711C7E7389007F4A7E /* NavigationController.swift */,
+				511A7F101C95E9A40053A20A /* ImageViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -86,6 +91,7 @@
 		51F621731C7E7CBF007F4A7E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				518F33231C90A4DC0062041B /* ImageCell.xib */,
 				51F621741C7E7CDA007F4A7E /* ImageCell.swift */,
 			);
 			name = Views;
@@ -167,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518F33241C90A4DC0062041B /* ImageCell.xib in Resources */,
 				51F621671C7E7051007F4A7E /* LaunchScreen.storyboard in Resources */,
 				51F621641C7E7051007F4A7E /* Assets.xcassets in Resources */,
 			);
@@ -185,6 +192,7 @@
 				51DC6D841C8265A200920C60 /* RemoteResourceable.swift in Sources */,
 				51F621701C7E72B3007F4A7E /* ImageListViewController.swift in Sources */,
 				51F6215D1C7E7051007F4A7E /* AppDelegate.swift in Sources */,
+				511A7F111C95E9A40053A20A /* ImageViewController.swift in Sources */,
 				51F621781C7E7EC7007F4A7E /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

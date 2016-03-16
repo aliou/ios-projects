@@ -14,26 +14,26 @@ class ImageListViewController<Item: protocol<ListDisplayable, RemoteResourceable
     didSet { tableView.reloadData() }
   }
 
-  var configureCell: (ImageCell, Item) -> Void = {
+  var configureCell: (UITableViewCell, Item) -> Void = {
     (cell, image) in cell.textLabel!.text = image.label
   }
 
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
   // MARK: - Init
 
   init() {
     super.init(nibName: nil, bundle: nil)
   }
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
   // MARK: - UIViewController
 
   override func viewDidLoad() {
     super.viewDidLoad()
   }
 
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
   // MARK: - UITableViewDataSource
 
   override func tableView(tableView: UITableView,
@@ -43,11 +43,23 @@ class ImageListViewController<Item: protocol<ListDisplayable, RemoteResourceable
 
   override func tableView(tableView: UITableView,
     cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-      let remoteImage = items[indexPath.row] as! Image
-      let cell = ImageCell(remoteImage: remoteImage)
+      let cell = UITableViewCell(style: .Default, reuseIdentifier: "identifier \(indexPath.row)")
+      cell.accessoryType = .DisclosureIndicator
       configureCell(cell, items[indexPath.row])
 
       return cell
   }
-////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
+
+  override func tableView(tableView: UITableView,
+    didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+      print("hey")
+      let image = items[indexPath.row] as! Image
+      let ivc = ImageViewController(image: image)
+
+      if let nvc = navigationController {
+        nvc.pushViewController(ivc, animated: true)
+      }
+      
+  }
 }
