@@ -17,10 +17,30 @@ extension NSDate {
   }
 
   func endOfDay() -> NSDate {
+    return nextDay().dateByAddingTimeInterval(-1)
+  }
+
+  func previousDay() -> NSDate {
+    let components = NSDateComponents()
+    components.day = -1
+    let date = NSCalendar.currentCalendar().dateByAddingComponents(components,
+      toDate: self.beginningOfDay(), options: [])!
+    return date
+  }
+
+  func nextDay() -> NSDate {
     let components = NSDateComponents()
     components.day = 1
-    var date = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: self.beginningOfDay(), options: [])!
-    date = date.dateByAddingTimeInterval(-1)
+    let date = NSCalendar.currentCalendar().dateByAddingComponents(components,
+      toDate: self.beginningOfDay(), options: [])!
     return date
+  }
+
+  class func tomorrow() -> NSDate {
+    return NSDate().nextDay()
+  }
+
+  class func yesterday() -> NSDate {
+    return NSDate().previousDay()
   }
 }
