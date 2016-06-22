@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		51B974D31D1B13E900E73883 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B974D21D1B13E900E73883 /* Bookmark.swift */; };
+		51B974D61D1B15BF00E73883 /* ListDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B974D51D1B15BF00E73883 /* ListDisplayable.swift */; };
 		51D292651D1736C800CE4499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D292641D1736C800CE4499 /* AppDelegate.swift */; };
 		51D292671D1736C800CE4499 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D292661D1736C800CE4499 /* ViewController.swift */; };
 		51D2926C1D1736C800CE4499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51D2926B1D1736C800CE4499 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		51B974D21D1B13E900E73883 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		51B974D51D1B15BF00E73883 /* ListDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDisplayable.swift; sourceTree = "<group>"; };
 		51D292611D1736C800CE4499 /* Later.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Later.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D292641D1736C800CE4499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51D292661D1736C800CE4499 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		51B974D41D1B159D00E73883 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				51B974D51D1B15BF00E73883 /* ListDisplayable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		51D292581D1736C800CE4499 = {
 			isa = PBXGroup;
 			children = (
@@ -70,12 +80,13 @@
 		51D292631D1736C800CE4499 /* Later */ = {
 			isa = PBXGroup;
 			children = (
-				51B974D11D1B13D400E73883 /* Models */,
 				51D292641D1736C800CE4499 /* AppDelegate.swift */,
-				51B974D01D1B13C300E73883 /* View Controllers */,
 				51D2926B1D1736C800CE4499 /* Assets.xcassets */,
-				51D2926D1D1736C800CE4499 /* LaunchScreen.storyboard */,
 				51D292701D1736C800CE4499 /* Info.plist */,
+				51D2926D1D1736C800CE4499 /* LaunchScreen.storyboard */,
+				51B974D11D1B13D400E73883 /* Models */,
+				51B974D41D1B159D00E73883 /* Protocols */,
+				51B974D01D1B13C300E73883 /* View Controllers */,
 			);
 			path = Later;
 			sourceTree = "<group>";
@@ -153,6 +164,7 @@
 			files = (
 				51D292671D1736C800CE4499 /* ViewController.swift in Sources */,
 				51D292651D1736C800CE4499 /* AppDelegate.swift in Sources */,
+				51B974D61D1B15BF00E73883 /* ListDisplayable.swift in Sources */,
 				51B974D31D1B13E900E73883 /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
