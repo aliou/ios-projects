@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     let bookmarks: [TextPresentable] = [
-      Bookmark(date: NSDate(), url: "http://aliou.me", title: nil, description: nil)
+      Bookmark(date: NSDate(), url: "http://aliou.me",
+        title: "Aliou Diallo's personal website", description: nil)
     ]
     let vc = ViewController(bookmarks: bookmarks, style: .Plain)
     window!.rootViewController = NavigationController(rootViewController: vc)
