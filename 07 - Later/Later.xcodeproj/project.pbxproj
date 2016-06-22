@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		512C4F071D1B18500083FD1B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512C4F061D1B18500083FD1B /* NavigationController.swift */; };
+		512C4F0A1D1B2E320083FD1B /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512C4F091D1B2E320083FD1B /* BookmarkTableViewCell.swift */; };
 		51B974D31D1B13E900E73883 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B974D21D1B13E900E73883 /* Bookmark.swift */; };
 		51B974D61D1B15BF00E73883 /* TextPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B974D51D1B15BF00E73883 /* TextPresentable.swift */; };
 		51D292651D1736C800CE4499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D292641D1736C800CE4499 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		512C4F061D1B18500083FD1B /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		512C4F091D1B2E320083FD1B /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
 		51B974D21D1B13E900E73883 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		51B974D51D1B15BF00E73883 /* TextPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPresentable.swift; sourceTree = "<group>"; };
 		51D292611D1736C800CE4499 /* Later.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Later.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		512C4F081D1B2E090083FD1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				512C4F091D1B2E320083FD1B /* BookmarkTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		51B974D01D1B13C300E73883 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 				51B974D11D1B13D400E73883 /* Models */,
 				51B974D41D1B159D00E73883 /* Protocols */,
 				51B974D01D1B13C300E73883 /* View Controllers */,
+				512C4F081D1B2E090083FD1B /* Views */,
 			);
 			path = Later;
 			sourceTree = "<group>";
@@ -170,6 +181,7 @@
 				512C4F071D1B18500083FD1B /* NavigationController.swift in Sources */,
 				51B974D61D1B15BF00E73883 /* TextPresentable.swift in Sources */,
 				51B974D31D1B13E900E73883 /* Bookmark.swift in Sources */,
+				512C4F0A1D1B2E320083FD1B /* BookmarkTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
