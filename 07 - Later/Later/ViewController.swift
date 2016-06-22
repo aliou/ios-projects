@@ -40,7 +40,7 @@ final class ViewController: UITableViewController {
     let svc = SFSafariViewController(URL: item.url)
 
     if let nvc = navigationController {
-      nvc.pushViewController(svc, animated: true)
+      nvc.presentViewController(svc, animated: true, completion: nil)
     }
   }
 
