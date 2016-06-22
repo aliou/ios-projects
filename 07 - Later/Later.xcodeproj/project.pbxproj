@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512C4F071D1B18500083FD1B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512C4F061D1B18500083FD1B /* NavigationController.swift */; };
 		51B974D31D1B13E900E73883 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B974D21D1B13E900E73883 /* Bookmark.swift */; };
 		51B974D61D1B15BF00E73883 /* ListDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B974D51D1B15BF00E73883 /* ListDisplayable.swift */; };
 		51D292651D1736C800CE4499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D292641D1736C800CE4499 /* AppDelegate.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		512C4F061D1B18500083FD1B /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		51B974D21D1B13E900E73883 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		51B974D51D1B15BF00E73883 /* ListDisplayable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDisplayable.swift; sourceTree = "<group>"; };
 		51D292611D1736C800CE4499 /* Later.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Later.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				51D292661D1736C800CE4499 /* ViewController.swift */,
+				512C4F061D1B18500083FD1B /* NavigationController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				51D292671D1736C800CE4499 /* ViewController.swift in Sources */,
 				51D292651D1736C800CE4499 /* AppDelegate.swift in Sources */,
+				512C4F071D1B18500083FD1B /* NavigationController.swift in Sources */,
 				51B974D61D1B15BF00E73883 /* ListDisplayable.swift in Sources */,
 				51B974D31D1B13E900E73883 /* Bookmark.swift in Sources */,
 			);

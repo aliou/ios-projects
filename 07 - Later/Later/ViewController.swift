@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 final class ViewController: UITableViewController {
 
@@ -25,8 +26,30 @@ final class ViewController: UITableViewController {
     return bookmarks.count
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = UITableViewCell()
+    let item = self.bookmarks[indexPath.row]
+    cell.accessoryType = .DisclosureIndicator
+    item.configureCell(cell)
+    return cell
   }
+
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let item = self.bookmarks[indexPath.row] as! Bookmark
+    let svc = SFSafariViewController(URL: item.url)
+
+    if let nvc = navigationController {
+      nvc.pushViewController(svc, animated: true)
+    }
+  }
+
+//  override func viewDidLoad() {
+//    super.viewDidLoad()
+//    // Do any additional setup after loading the view, typically from a nib.
+//  }
+//
+//  override func didReceiveMemoryWarning() {
+//    super.didReceiveMemoryWarning()
+//    // Dispose of any resources that can be recreated.
+//  }
 }

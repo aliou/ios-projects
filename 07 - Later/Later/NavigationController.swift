@@ -6,4 +6,7 @@
 //  Copyright © 2016 Aliou Diallo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class NavigationController: UINavigationController {
+}

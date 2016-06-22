@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       Bookmark(date: NSDate(), url: "http://aliou.me", title: nil, description: nil)
     ]
     let vc = ViewController(bookmarks: bookmarks, style: .Plain)
-    window!.rootViewController = ViewController(bookmarks: [], style: .Plain)
+    window!.rootViewController = NavigationController(rootViewController: vc)
     window!.makeKeyAndVisible()
     return true
   }
