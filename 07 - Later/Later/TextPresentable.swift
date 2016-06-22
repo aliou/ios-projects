@@ -1,5 +1,5 @@
 //
-//  ListDisplayable.swift
+//  TextPresentable.swift
 //  Later
 //
 //  Created by Aliou Diallo on 22/06/16.
@@ -8,7 +8,6 @@
 
 import UIKit
 
-protocol ListDisplayable {
-  func label() -> String
-  func configureCell(cell: UITableViewCell)
+protocol TextPresentable {
+  var text: String { get }
 }

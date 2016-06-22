@@ -20,13 +20,9 @@ struct Bookmark: TextPresentable {
     self.title = title
     self.description = description
   }
+}
 
-  func label() -> String {
-    return title ?? url.absoluteString
-  }
-
-  func configureCell(cell: UITableViewCell) {
-    cell.textLabel!.text = self.label()
-  }
-  
+// Mark: TextPresentable Conformance
+extension Bookmark {
+  var text: String { return self.title ?? self.url.absoluteString }
 }

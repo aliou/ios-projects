@@ -27,10 +27,11 @@ final class ViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = UITableViewCell()
+    let cell = BookmarkTableViewCell()
     let item = self.bookmarks[indexPath.row]
     cell.accessoryType = .DisclosureIndicator
-    item.configureCell(cell)
+    cell.configure(withPresenter: item)
+
     return cell
   }
 
