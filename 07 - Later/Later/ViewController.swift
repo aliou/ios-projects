@@ -8,11 +8,21 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+final class ViewController: UITableViewController {
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  let bookmarks: [ListDisplayable]
+
+  init(bookmarks: [ListDisplayable], style: UITableViewStyle) {
+    self.bookmarks = bookmarks
+    super.init(style: style)
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return bookmarks.count
   }
 
   override func didReceiveMemoryWarning() {

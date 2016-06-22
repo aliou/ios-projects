@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Bookmark {
+struct Bookmark: ListDisplayable {
   let date: NSDate
   let url: NSURL
   let title: String?
@@ -20,4 +20,13 @@ struct Bookmark {
     self.title = title
     self.description = description
   }
+
+  func label() -> String {
+    return title ?? url.absoluteString
+  }
+
+  func configureCell(cell: UITableViewCell) {
+    cell.textLabel!.text = self.label()
+  }
+  
 }
