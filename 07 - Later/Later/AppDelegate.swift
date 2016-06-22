@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow? = UIWindow(frame: UIScreen.mainScreen().bounds)
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    let bookmarks: [ListDisplayable] = [
+    let bookmarks: [TextPresentable] = [
       Bookmark(date: NSDate(), url: "http://aliou.me", title: nil, description: nil)
     ]
     let vc = ViewController(bookmarks: bookmarks, style: .Plain)

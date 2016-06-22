@@ -11,9 +11,9 @@ import SafariServices
 
 final class ViewController: UITableViewController {
 
-  let bookmarks: [ListDisplayable]
+  let bookmarks: [TextPresentable]
 
-  init(bookmarks: [ListDisplayable], style: UITableViewStyle) {
+  init(bookmarks: [TextPresentable], style: UITableViewStyle) {
     self.bookmarks = bookmarks
     super.init(style: style)
   }

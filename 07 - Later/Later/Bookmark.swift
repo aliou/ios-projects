@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Bookmark: ListDisplayable {
+struct Bookmark: TextPresentable {
   let date: NSDate
   let url: NSURL
   let title: String?
