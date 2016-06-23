@@ -15,6 +15,7 @@
 		51D292671D1736C800CE4499 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D292661D1736C800CE4499 /* ViewController.swift */; };
 		51D2926C1D1736C800CE4499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51D2926B1D1736C800CE4499 /* Assets.xcassets */; };
 		51D2926F1D1736C800CE4499 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D2926D1D1736C800CE4499 /* LaunchScreen.storyboard */; };
+		51EFEF261D1C668D00BA7BAB /* BookmarkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EFEF251D1C668D00BA7BAB /* BookmarkClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		51D2926B1D1736C800CE4499 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51D2926E1D1736C800CE4499 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51D292701D1736C800CE4499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51EFEF251D1C668D00BA7BAB /* BookmarkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				51B974D21D1B13E900E73883 /* Bookmark.swift */,
+				51EFEF251D1C668D00BA7BAB /* BookmarkClient.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D292671D1736C800CE4499 /* ViewController.swift in Sources */,
+				51EFEF261D1C668D00BA7BAB /* BookmarkClient.swift in Sources */,
 				51D292651D1736C800CE4499 /* AppDelegate.swift in Sources */,
 				512C4F071D1B18500083FD1B /* NavigationController.swift in Sources */,
 				51B974D61D1B15BF00E73883 /* TextPresentable.swift in Sources */,

@@ -11,7 +11,7 @@ import SafariServices
 
 final class ViewController: UITableViewController {
 
-  let bookmarks: [TextPresentable]
+  var bookmarks: [TextPresentable] = []
 
   init(bookmarks: [TextPresentable], style: UITableViewStyle) {
     self.bookmarks = bookmarks
@@ -20,6 +20,26 @@ final class ViewController: UITableViewController {
 
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    BookmarkClient.sharedClient.getBookmarks() { (bookmarks) in
+      var bks: [TextPresentable] = []
+      for bk in bookmarks {
+        bks.append(bk as TextPresentable)
+      }
+
+      self.bookmarks = bks
+//      let bks: [TextPresentable] = bookmarks
+//      self.bookmarks = bks
+      dispatch_async(dispatch_get_main_queue()) {
+        self.tableView.reloadData()
+      }
+    }
+
+    // Retrieve the bookmarks from here.
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,14 +63,4 @@ final class ViewController: UITableViewController {
       nvc.presentViewController(svc, animated: true, completion: nil)
     }
   }
-
-//  override func viewDidLoad() {
-//    super.viewDidLoad()
-//    // Do any additional setup after loading the view, typically from a nib.
-//  }
-//
-//  override func didReceiveMemoryWarning() {
-//    super.didReceiveMemoryWarning()
-//    // Dispose of any resources that can be recreated.
-//  }
 }
