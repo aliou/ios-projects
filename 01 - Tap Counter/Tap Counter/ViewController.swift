@@ -37,12 +37,12 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
   }
 
-  @IBAction func resetCounter(sender: AnyObject) {
+  @IBAction func resetCounter(_ sender: AnyObject) {
     self.counter = 0
   }
 
-  @IBAction func increaseCounter(sender: AnyObject) {
-    self.counter++
+  @IBAction func increaseCounter(_ sender: AnyObject) {
+    self.counter += 1
   }
 }
 

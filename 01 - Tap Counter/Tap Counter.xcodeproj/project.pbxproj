@@ -97,6 +97,7 @@
 					51D7E95A1C76879000544C99 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = N79EPN93WR;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -252,6 +253,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.aliou.Tap-Counter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -263,6 +265,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.aliou.Tap-Counter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -285,6 +288,7 @@
 				51D7E96F1C76879000544C99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

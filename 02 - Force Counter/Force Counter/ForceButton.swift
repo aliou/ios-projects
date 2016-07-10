@@ -11,7 +11,7 @@ import AudioToolbox
 
 class ForceButton: UIButton {
   private let maxForceValue: CGFloat = 6.6
-  var shadowColor: UIColor = UIColor.grayColor()
+  var shadowColor: UIColor = UIColor.gray()
   var shadowOpacity: Float = 0.8
   var maxShadowOffset: CGSize = CGSize(width: 10, height: 10)
   var maxShadowRadius: CGFloat = 10.0
@@ -21,22 +21,22 @@ class ForceButton: UIButton {
     shadowWithAmount(0.0)
   }
 
-  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    super.touchesBegan(touches, withEvent: event)
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesBegan(touches, with: event)
     handleForceWithTouches(touches)
   }
 
-  override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    super.touchesMoved(touches, withEvent: event)
+  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesMoved(touches, with: event)
     handleForceWithTouches(touches)
   }
 
-  override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    super.touchesEnded(touches, withEvent: event)
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesEnded(touches, with: event)
     shadowWithAmount(0.0)
   }
 
-  func handleForceWithTouches(touches: Set<UITouch>) {
+  func handleForceWithTouches(_ touches: Set<UITouch>) {
     if touches.count != 1 { return  }
 
     guard let touch = touches.first else { return }
@@ -48,19 +48,19 @@ class ForceButton: UIButton {
     if percentage > 100 { percentage = 100 }
     let formattedPercentage = NSString(format: "%.2f", percentage)
 
-    self.setTitle("\(formattedPercentage)%", forState: .Normal)
+    self.setTitle("\(formattedPercentage)%", for: UIControlState())
 
     if touch.force >= maxForceValue {
       AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
 
     if touch.force == 0.0 {
-      self.setTitle("TouchMe!", forState: .Normal)
+      self.setTitle("TouchMe!", for: UIControlState())
     }
   }
 
-  func shadowWithAmount(amount: CGFloat) {
-    layer.shadowColor = shadowColor.CGColor
+  func shadowWithAmount(_ amount: CGFloat) {
+    layer.shadowColor = shadowColor.cgColor
     layer.shadowOpacity = shadowOpacity
     let widthFactor = maxShadowOffset.width / maxForceValue
     let heightFactor = maxShadowOffset.height / maxForceValue
