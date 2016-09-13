@@ -11,7 +11,7 @@ import AudioToolbox
 
 class ForceButton: UIButton {
   private let maxForceValue: CGFloat = 6.6
-  var shadowColor: UIColor = UIColor.gray()
+  var shadowColor: UIColor = UIColor.gray
   var shadowOpacity: Float = 0.8
   var maxShadowOffset: CGSize = CGSize(width: 10, height: 10)
   var maxShadowRadius: CGFloat = 10.0
