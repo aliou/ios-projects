@@ -36,15 +36,15 @@ class ViewController: UIViewController {
     let button = UIButton()
     button.translatesAutoresizingMaskIntoConstraints = false
 
-    button.setTitle("Save", forState: .Normal)
-    button.setTitleColor(.whiteColor(), forState: .Normal)
-    button.backgroundColor = .clearColor()
+    button.setTitle("Save", for: UIControlState())
+    button.setTitleColor(.white, for: UIControlState())
+    button.backgroundColor = .clear
 
     button.layer.borderWidth = 1.0
-    button.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).CGColor
+    button.layer.borderColor = UIColor(white: 1.0, alpha: 0.7).cgColor
     button.layer.cornerRadius = 5.0
 
-    button.addTarget(self, action: "saveImage:", forControlEvents: .TouchUpInside)
+    button.addTarget(self, action: #selector(ViewController.saveImage(_:)), for: .touchUpInside)
 
     return button
   }()
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     setupSaveButton()
   }
 
-  override func prefersStatusBarHidden() -> Bool {
+  override var prefersStatusBarHidden : Bool {
     return true
   }
 
@@ -68,9 +68,9 @@ class ViewController: UIViewController {
     gradientView = GradientView(frame: view.frame)
     let colors = gradientColors.randomItem()!
     gradientView!.colors = colors
-    currentImageIndex = gradientColors.indexOf({ $0 == colors })!
+    currentImageIndex = gradientColors.index(where: { $0 == colors })!
 
-    let tap = UITapGestureRecognizer(target: self, action: "updateColor:")
+    let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.updateColor(_:)))
     gradientView?.addGestureRecognizer(tap)
 
     view.addSubview(gradientView!)
@@ -79,39 +79,39 @@ class ViewController: UIViewController {
   func setupSaveButton() {
     view.addSubview(saveButton)
     view.addConstraints([
-      NSLayoutConstraint(item: saveButton, attribute: .CenterX, relatedBy: .Equal,
-        toItem: view, attribute: .CenterX, multiplier: 1, constant: 0),
-      NSLayoutConstraint(item: saveButton, attribute: .CenterY, relatedBy: .Equal,
-        toItem: view, attribute: .BottomMargin, multiplier: 1, constant: -50),
-      NSLayoutConstraint(item: saveButton, attribute: .Left, relatedBy: .Equal,
-        toItem: view, attribute: .Left, multiplier: 1, constant: 50),
+      NSLayoutConstraint(item: saveButton, attribute: .centerX, relatedBy: .equal,
+        toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
+      NSLayoutConstraint(item: saveButton, attribute: .centerY, relatedBy: .equal,
+        toItem: view, attribute: .bottomMargin, multiplier: 1, constant: -50),
+      NSLayoutConstraint(item: saveButton, attribute: .left, relatedBy: .equal,
+        toItem: view, attribute: .left, multiplier: 1, constant: 50),
     ])
   }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-  func saveImage(sender: UIButton) {
+  func saveImage(_ sender: UIButton) {
     UIGraphicsBeginImageContext(gradientView!.bounds.size)
-    gradientView!.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+    gradientView!.layer.render(in: UIGraphicsGetCurrentContext()!)
     let gradientImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
 
-    UIImageWriteToSavedPhotosAlbum(gradientImage, self, "image:didFinishSavingWithError:contextInfo:", nil)
+    UIImageWriteToSavedPhotosAlbum(gradientImage!, self, #selector(ViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
   }
 
-  func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafePointer<Void>) {
+  func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
     if error == nil {
-      let ac = UIAlertController(title: "Saved!", message: "Your gradient has been saved.", preferredStyle: .Alert)
-      ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-      presentViewController(ac, animated: true, completion: nil)
+      let ac = UIAlertController(title: "Saved!", message: "Your gradient has been saved.", preferredStyle: .alert)
+      ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      present(ac, animated: true, completion: nil)
     } else {
-      let ac = UIAlertController(title: "Save error", message: error?.localizedDescription, preferredStyle: .Alert)
-      ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-      presentViewController(ac, animated: true, completion: nil)
+      let ac = UIAlertController(title: "Save error", message: error?.localizedDescription, preferredStyle: .alert)
+      ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      present(ac, animated: true, completion: nil)
     }
   }
 
-  func updateColor(sender: UIGestureRecognizer) {
+  func updateColor(_ sender: UIGestureRecognizer) {
     if let gradientView = gradientView {
       currentImageIndex = (currentImageIndex + 1) % gradientColors.count
       gradientView.colors = gradientColors[currentImageIndex]

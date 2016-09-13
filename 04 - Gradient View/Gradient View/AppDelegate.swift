@@ -11,16 +11,14 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  lazy var window: UIWindow? = {
-    let window = UIWindow(frame: UIScreen.mainScreen().bounds)
-    window.rootViewController = ViewController()
-    window.backgroundColor = .whiteColor()
+  var window: UIWindow?
 
-    return window
-  }()
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = ViewController()
+    window?.backgroundColor = .white
+    window?.makeKeyAndVisible()
 
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    window!.makeKeyAndVisible()
     return true
   }
 }
